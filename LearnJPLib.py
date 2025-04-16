@@ -1,30 +1,44 @@
 from __future__ import annotations
-from LearnBotLib import LearnProfile
+from LearnBotLib import LanguageProfile
+from Vector import Vector2d
 
 class VocabJP:
-    def __init__(self):
-        pass
+    def __init__(self, eng : str, vector : Vector2d):
+        self.jp : str = ""
+        self.eng : str = eng
+        self.romaji : str = ""
+        self.example : str = ""
+        self.vector : Vector2d = vector   
     
 class Kanji:
-    def __init__(self):
-        pass
+    def __init__(self, sym : str, vector : Vector2d):
+        self.sym : str = ""
+        self.meaning : str = sym
+        self.on : list[str] = []
+        self.kun : list[str] = []
+        
+        self.vector : Vector2d = vector  
     
 class Hiragana:
-    def __init__(self):
-        pass
+    def __init__(self, sym : str, vector : Vector2d):
+        self.sym : str = sym
+        self.sound : str = ""
+        self.vector : Vector2d = vector 
 
 class Katakana:
-    def __init__(self):
-        pass
+    def __init__(self, sym : str, vector : Vector2d):
+        self.sym : str = sym
+        self.sound : str = ""
+        self.vector : Vector2d = vector 
     
 class GrammarJP:
     def __init__(self):
         pass
     
-class JapaneseProfile(LearnProfile):
-    def __init__(self, user, lerningscore, grade, solvedVocabJP : list[VocabJP], solvedKanji : list[Kanji], solvedHiragana : list[Hiragana], solvedKataka : list[Katakana], solvedGrammarJP : list[GrammarJP], learnedVocabJP : list[VocabJP], learnedKanji : list[Kanji], learnedHiragana : list[Hiragana], learnedKataka : list[Katakana], learnedGrammarJP : list[GrammarJP]):
+class JapaneseProfile(LanguageProfile):
+    def __init__(self, learningscore, grade, solvedVocabJP : list[VocabJP], solvedKanji : list[Kanji], solvedHiragana : list[Hiragana], solvedKataka : list[Katakana], solvedGrammarJP : list[GrammarJP], learnedVocabJP : list[VocabJP], learnedKanji : list[Kanji], learnedHiragana : list[Hiragana], learnedKataka : list[Katakana], learnedGrammarJP : list[GrammarJP]):
         #parent class __init__
-        super().__init__(user, "jp", lerningscore, grade)
+        super().__init__("jp", learningscore, grade)
         
         #loaded from file
         self.solvedVocabJP : list[VocabJP] = solvedVocabJP

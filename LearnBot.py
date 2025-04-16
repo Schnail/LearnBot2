@@ -1,5 +1,8 @@
 
 
+#Load Config as constants
+
+
 #Initialize on start
 #load important objects from file
 

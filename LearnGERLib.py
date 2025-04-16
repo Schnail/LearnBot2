@@ -1,6 +1,6 @@
 #unused example classes; functionality not implemented yet
 from __future__ import annotations
-from LearnBotLib import LearnProfile
+from LearnBotLib import LanguageProfile
 
 class VocabGER:
     def __init__(self):
@@ -11,10 +11,10 @@ class GrammarGER:
         pass
     
       
-class GermanProfile(LearnProfile):
-    def __init__(self, user, lerningscore, grade, solvedVocabGER : list[VocabGER], solvedGrammarGER : list[GrammarGER], learnedVocabGER : list[VocabGER], learnedGrammarGER : list[GrammarGER]):
+class GermanProfile(LanguageProfile):
+    def __init__(self, learningscore, grade, solvedVocabGER : list[VocabGER], solvedGrammarGER : list[GrammarGER], learnedVocabGER : list[VocabGER], learnedGrammarGER : list[GrammarGER]):
         #parent class __init__
-        super().__init__(user, "ger", lerningscore, grade)
+        super().__init__("ger", learningscore, grade)
         
         #loaded from file
         self.solvedVocabGER : list[VocabGER] = solvedVocabGER
